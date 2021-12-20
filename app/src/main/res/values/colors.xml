@@ -10,4 +10,15 @@
     <color name="orange_color">#e2631a</color>
     <color name="red">#E21A1A</color>
 
+
+    <color name="primary">#081B25</color>
+
+    <color name="bottom_nav_active">#5F95FC</color>
+    <color name="bottom_nav_def">#2C4E66</color>
+
+    <color name="svg_fill_color">#665AAC</color>
+
+    <color name="weather_item_text">#FFFFFB</color>
+    <color name="weather_item_para">#5F7889</color>
+
 </resources>
