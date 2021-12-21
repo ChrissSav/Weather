@@ -1,18 +1,16 @@
 <resources>
-    <string name="app_name" translatable="false">WeatherApp</string>
+    <string name="app_name" translatable="false">Weather.</string>
     <string name="title_home" translatable="false">Home</string>
     <string name="title_favorites" translatable="false">Favorites</string>
     <string name="title_settings" translatable="false">Settings</string>
-    <string name="ERROR_INTERNET_CONNECTION" translatable="false">No Internet Connection</string>
-    <string name="warning" translatable="false">Warning</string>
-    <string name="ERROR_SOMETHING_WRONG" translatable="false">Oops! An error has occurred. *_*</string>
-    <string name="check_field" translatable="false">Check the field.</string>
-
 
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
     <string name="now">Now</string>
     <string name="today">Today</string>
+    <string name="warning">Warning</string>
+    <string name="ERROR_INTERNET_CONNECTION">No Internet Connection</string>
+    <string name="ERROR_SOMETHING_WRONG">Oops! An error has occurred. *_*</string>
     <string name="wind_placeholder" translatable="false">%s km/h</string>
     <string name="pressure_placeholder" translatable="false">%s atm</string>
     <string name="humidity_placeholder" translatable="false">%s %%</string>

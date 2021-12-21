@@ -3,6 +3,7 @@ package com.example.weatherapplication.ui
 import androidx.navigation.NavController
 import com.example.weatherapplication.data.base.BaseActivityViewModel
 import com.example.weatherapplication.databinding.ActivityMainBinding
+import com.example.weatherapplication.util.createAlerter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -15,7 +16,12 @@ class MainActivity : BaseActivityViewModel<ActivityMainBinding, MainViewModel>(M
         ActivityMainBinding.inflate(layoutInflater)
 
     override fun setUpObservers() {
-
+        viewModel.error.observe(this, {
+            if (it.internal)
+                createAlerter(getString(it.messageId))
+            else
+                createAlerter(it.message)
+        })
 
     }
 

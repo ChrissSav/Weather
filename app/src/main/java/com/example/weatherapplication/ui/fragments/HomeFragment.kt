@@ -12,6 +12,7 @@ import com.example.weatherapplication.ui.adapters.HoursAdapter
 import com.example.weatherapplication.util.convertTimestampToFormat
 import com.example.weatherapplication.util.firstLetterUpperCase
 import com.example.weatherapplication.util.setAnyText
+import kotlin.math.round
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -26,11 +27,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         viewModel.weather.observe(this, Observer {
             with(binding) {
-                //   temperature.setAnyText(kotlin.math.ceil(it.current.temp).roundToInt())
-                temperature.setAnyText(it.current.temp)
+                temperature.setAnyText(round(it.current.temp).toInt())
                 weather.setAnyText(it.current.weather.description.firstLetterUpperCase())
                 wind.setAnyText(getString(R.string.wind_placeholder, it.current.windSpeed))
-                pressure.setAnyText(getString(R.string.pressure_placeholder, (it.current.pressure / 1000F)))
+                pressure.setAnyText(getString(R.string.pressure_placeholder, it.current.pressure / 1000))
                 humidity.setAnyText(getString(R.string.humidity_placeholder, it.current.humidity))
 
                 binding.icon.setImageResource(it.current.weather.icon)

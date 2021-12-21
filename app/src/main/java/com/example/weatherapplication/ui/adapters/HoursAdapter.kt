@@ -11,6 +11,7 @@ import com.example.weatherapplication.domain.dto.InfoHourly
 import com.example.weatherapplication.util.InfoHourlyDiffCallback
 import com.example.weatherapplication.util.convertTimestampToFormat
 import com.example.weatherapplication.util.setAnyText
+import kotlin.math.round
 
 
 class HoursAdapter : ListAdapter<InfoHourly, HoursAdapter.ViewHolder>(InfoHourlyDiffCallback()) {
@@ -30,7 +31,7 @@ class HoursAdapter : ListAdapter<InfoHourly, HoursAdapter.ViewHolder>(InfoHourly
             if (position == 0) binding.hour.text = binding.hour.context.resources.getString(R.string.now)
             else binding.hour.text = convertTimestampToFormat(currentItem.dt, "HH:mm")
 
-            binding.temperature.setAnyText(currentItem.temp)
+            binding.temperature.setAnyText(round(currentItem.temp).toInt())
             binding.icon.setImageResource(currentItem.weather.icon)
 
         }

@@ -10,6 +10,7 @@ import com.example.weatherapplication.domain.dto.InfoDaily
 import com.example.weatherapplication.util.InfoDailyDiffCallback
 import com.example.weatherapplication.util.convertTimestampToFormat
 import com.example.weatherapplication.util.setAnyText
+import kotlin.math.round
 
 
 class DailyAdapter : ListAdapter<InfoDaily, DailyAdapter.ViewHolder>(InfoDailyDiffCallback()) {
@@ -27,8 +28,8 @@ class DailyAdapter : ListAdapter<InfoDaily, DailyAdapter.ViewHolder>(InfoDailyDi
             val currentItem = currentList[position]
 
             binding.day.text = convertTimestampToFormat(currentItem.dt, "EEEE")
-            binding.temperatureMax.setAnyText(currentItem.temp.max)
-            binding.temperature.setAnyText(currentItem.temp.day)
+            binding.temperatureMax.setAnyText(round(currentItem.temp.max).toInt())
+            binding.temperature.setAnyText(round(currentItem.temp.min).toInt())
             binding.icon.setImageResource(currentItem.weather.icon)
 
         }

@@ -2,5 +2,7 @@
 <resources>
     <string name="now">Τώρα</string>
     <string name="today">Σήμερα</string>
-
+    <string name="warning">Προσοχή</string>
+    <string name="ERROR_INTERNET_CONNECTION">Δεν υπάρχει σύνδεση στο διαδίκτυο</string>
+    <string name="ERROR_SOMETHING_WRONG">Ωχ! Παρουσιάστηκε σφάλμα. *_*</string>
 </resources>
