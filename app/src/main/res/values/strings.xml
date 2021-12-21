@@ -9,10 +9,11 @@
     <string name="check_field" translatable="false">Check the field.</string>
 
 
-    <string name="regex_min_1_chars">^.{1,}$</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
     <string name="now">Now</string>
-
+    <string name="today">Today</string>
+    <string name="wind_placeholder" translatable="false">%s km/h</string>
+    <string name="pressure_placeholder" translatable="false">%s atm</string>
+    <string name="humidity_placeholder" translatable="false">%s %%</string>
 </resources>

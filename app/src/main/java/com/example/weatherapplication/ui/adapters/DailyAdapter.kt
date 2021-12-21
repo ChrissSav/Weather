@@ -29,6 +29,7 @@ class DailyAdapter : ListAdapter<InfoDaily, DailyAdapter.ViewHolder>(InfoDailyDi
             binding.day.text = convertTimestampToFormat(currentItem.dt, "EEEE")
             binding.temperatureMax.setAnyText(currentItem.temp.max)
             binding.temperature.setAnyText(currentItem.temp.day)
+            binding.icon.setImageResource(currentItem.weather.icon)
 
         }
     }

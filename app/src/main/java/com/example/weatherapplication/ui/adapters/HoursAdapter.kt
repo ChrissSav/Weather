@@ -31,6 +31,7 @@ class HoursAdapter : ListAdapter<InfoHourly, HoursAdapter.ViewHolder>(InfoHourly
             else binding.hour.text = convertTimestampToFormat(currentItem.dt, "HH:mm")
 
             binding.temperature.setAnyText(currentItem.temp)
+            binding.icon.setImageResource(currentItem.weather.icon)
 
         }
     }

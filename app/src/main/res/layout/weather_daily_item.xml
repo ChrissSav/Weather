@@ -28,7 +28,7 @@
         android:layout_marginEnd="16dp"
         android:text="22"
         android:textColor="@color/weather_item_text"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/temperature"
         app:layout_constraintTop_toTopOf="parent"
@@ -74,12 +74,13 @@
         tools:ignore="SmallSp" />
 
     <ImageView
-        android:id="@+id/textView2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:id="@+id/icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:src="@drawable/ic_sun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

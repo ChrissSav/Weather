@@ -1,12 +1,16 @@
 package com.example.weatherapplication.ui.fragments
 
+import android.annotation.SuppressLint
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.example.weatherapplication.R
 import com.example.weatherapplication.data.base.BaseFragment
 import com.example.weatherapplication.databinding.FragmentHomeBinding
 import com.example.weatherapplication.ui.MainViewModel
 import com.example.weatherapplication.ui.adapters.DailyAdapter
 import com.example.weatherapplication.ui.adapters.HoursAdapter
+import com.example.weatherapplication.util.convertTimestampToFormat
+import com.example.weatherapplication.util.firstLetterUpperCase
 import com.example.weatherapplication.util.setAnyText
 
 
@@ -17,18 +21,27 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun getViewBinding(): FragmentHomeBinding =
         FragmentHomeBinding.inflate(layoutInflater)
 
+    @SuppressLint("StringFormatMatches")
     override fun setUpObservers() {
 
         viewModel.weather.observe(this, Observer {
             with(binding) {
                 //   temperature.setAnyText(kotlin.math.ceil(it.current.temp).roundToInt())
                 temperature.setAnyText(it.current.temp)
-                weather.setAnyText(it.current.weather.description)
-                humidity.setAnyText(it.current.humidity)
-                wind.setAnyText(it.current.windSpeed)
+                weather.setAnyText(it.current.weather.description.firstLetterUpperCase())
+                wind.setAnyText(getString(R.string.wind_placeholder, it.current.windSpeed))
+                pressure.setAnyText(getString(R.string.pressure_placeholder, (it.current.pressure / 1000F)))
+                humidity.setAnyText(getString(R.string.humidity_placeholder, it.current.humidity))
+
+                binding.icon.setImageResource(it.current.weather.icon)
+
+                sunrise.setAnyText(convertTimestampToFormat(it.current.sunrise, "HH:mm"))
+                sunset.setAnyText(convertTimestampToFormat(it.current.sunset, "HH:mm"))
 
                 (binding.recyclerViewHour.adapter as HoursAdapter).submitList(it.hourly)
                 (binding.recyclerViewDay.adapter as DailyAdapter).submitList(it.daily)
+
+
             }
         })
     }

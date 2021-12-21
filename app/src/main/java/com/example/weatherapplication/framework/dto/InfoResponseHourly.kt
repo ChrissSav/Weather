@@ -7,6 +7,8 @@ data class InfoResponseHourly(
     val temp: Double,
     val pressure: Int,
     val humidity: Int,
+    val sunrise: Long,
+    val sunset: Long,
     @SerializedName("dew_point")
     val dewPoint: Double,
     val uvi: Double,

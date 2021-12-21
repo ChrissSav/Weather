@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
-    android:layout_margin="8dp">
+    android:layout_margin="10dp">
 
     <TextView
         android:id="@+id/hour"
@@ -29,8 +29,8 @@
         android:textColor="@color/weather_item_text"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="@+id/icon"
         tools:ignore="SmallSp" />
 
     <TextView
@@ -46,9 +46,9 @@
         tools:ignore="SmallSp" />
 
     <ImageView
-        android:id="@+id/textView2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:id="@+id/icon"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:src="@drawable/ic_sun"

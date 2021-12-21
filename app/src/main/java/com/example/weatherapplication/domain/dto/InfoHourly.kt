@@ -6,6 +6,8 @@ data class InfoHourly(
     val temp: Double,
     val pressure: Int,
     val humidity: Int,
+    val sunrise: Long,
+    val sunset: Long,
     val uvi: Double,
     val windSpeed: Double,
     val weather: Weather
