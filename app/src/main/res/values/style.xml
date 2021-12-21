@@ -13,6 +13,10 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
+
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/primary</item>
+
     </style>
 
     <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">

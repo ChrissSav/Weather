@@ -1,33 +1,18 @@
 <resources>
-    <string name="app_name">WeatherApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_favorites">Favorites</string>
-    <string name="title_settings">Settings</string>
-    <string name="register">Register</string>
-    <string name="ERROR_INTERNET_CONNECTION">No Internet Connection</string>
-    <string name="warning">Warning</string>
-    <string name="ERROR_SOMETHING_WRONG">Oops! An error has occurred. *_*</string>
-    <string name="regex_accept_all">^.{0,50}$</string>
-    <string name="check_field">Check the field.</string>
-    <string name="show_password">Show</string>
-    <string name="hide_password">Hide</string>
-
-
-    <string name="welcome_message">Welcome</string>
-
-
-    <string name="ERROR_INVALID_EMAIL_FORMAT">Invalid email address.</string>
-    <string name="EMAIL_PLACEHOLDER">e.g. user@example.com</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="first_name">First name</string>
-    <string name="last_name">Last name</string>
-    <string name="password_error">Password field is empty</string>
+    <string name="app_name" translatable="false">WeatherApp</string>
+    <string name="title_home" translatable="false">Home</string>
+    <string name="title_favorites" translatable="false">Favorites</string>
+    <string name="title_settings" translatable="false">Settings</string>
+    <string name="ERROR_INTERNET_CONNECTION" translatable="false">No Internet Connection</string>
+    <string name="warning" translatable="false">Warning</string>
+    <string name="ERROR_SOMETHING_WRONG" translatable="false">Oops! An error has occurred. *_*</string>
+    <string name="check_field" translatable="false">Check the field.</string>
 
 
     <string name="regex_min_1_chars">^.{1,}$</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
+    <string name="now">Now</string>
 
 </resources>

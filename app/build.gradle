@@ -24,13 +24,13 @@ android {
     buildTypes {
 
         debug {
-            buildConfigField "String", "API_URL","\"https://reqres.in/api/\""
+            buildConfigField "String", "API_URL","\"https://api.openweathermap.org/\""
             versionNameSuffix "-debug"
 
         }
 
         release {
-            buildConfigField "String", "API_URL","\"https://reqres.in/api/\""
+            buildConfigField "String", "API_URL","\"https://api.openweathermap.org/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

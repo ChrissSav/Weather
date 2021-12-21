@@ -1,5 +1,6 @@
-package com.example.weatherapplication.framework
+package com.example.weatherapplication.framework.interceptors
 
+import com.example.weatherapplication.framework.NoInternetException
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.net.InetAddress

@@ -1,6 +1,6 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="label">12sp</dimen>
-
-
+    <dimen name="main_svg_dimen">20dp</dimen>
+    <dimen name="main_svg_margin_from_label">2dp</dimen>
 </resources>

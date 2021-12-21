@@ -1,8 +1,9 @@
 package com.example.weatherapplication.di
 
 import com.example.weatherapplication.BuildConfig
-import com.example.weatherapplication.framework.NetworkConnectionInterceptor
 import com.example.weatherapplication.framework.WeatherService
+import com.example.weatherapplication.framework.interceptors.NetworkConnectionInterceptor
+import com.example.weatherapplication.framework.interceptors.TokenUnitInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -36,19 +37,29 @@ object NetworkModule {
     }
 
 
-
     @Singleton
     @Provides
     fun provideNetworkConnectionInterceptor() = NetworkConnectionInterceptor()
 
     @Singleton
     @Provides
-    fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor,networkConnectionInterceptor : NetworkConnectionInterceptor): OkHttpClient.Builder {
+    fun provideTokenInterceptor() = TokenUnitInterceptor()
+
+
+    @Singleton
+    @Provides
+    fun provideOkHttpClient(
+        loggingInterceptor: HttpLoggingInterceptor,
+        networkConnectionInterceptor: NetworkConnectionInterceptor,
+        tokenUnitInterceptor: TokenUnitInterceptor
+    ): OkHttpClient.Builder {
         val client = OkHttpClient.Builder().proxy(Proxy.NO_PROXY)
             .connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
             .addInterceptor(networkConnectionInterceptor)
+            .addInterceptor(tokenUnitInterceptor)
+
         if (BuildConfig.DEBUG) {
             client.addInterceptor(loggingInterceptor)
         }

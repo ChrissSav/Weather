@@ -11,8 +11,8 @@
         android:id="@+id/city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
         android:text="San Fransisco"
         android:textColor="@color/weather_item_text"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +27,7 @@
         android:text="18"
         android:textColor="@color/weather_item_text"
         android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/city"
         app:layout_constraintStart_toStartOf="@+id/city"
         app:layout_constraintTop_toBottomOf="@+id/city" />
 
@@ -56,20 +57,30 @@
         android:id="@+id/icon"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
         android:src="@drawable/ic_sun"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/city" />
+
+    <ImageView
+        android:id="@+id/imageView_humidity"
+        android:layout_width="@dimen/main_svg_dimen"
+        android:layout_height="@dimen/main_svg_dimen"
+        android:src="@drawable/ic_humidity"
+        app:layout_constraintBottom_toBottomOf="@+id/humidity"
+        app:layout_constraintStart_toStartOf="@+id/city"
+        app:layout_constraintTop_toTopOf="@+id/humidity" />
 
     <TextView
         android:id="@+id/humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_svg_margin_from_label"
         android:text="13%"
         android:textColor="@color/weather_item_text"
         app:layout_constraintBottom_toBottomOf="@+id/pressure"
-        app:layout_constraintStart_toStartOf="@+id/temperature"
+        app:layout_constraintStart_toEndOf="@+id/imageView_humidity"
         app:layout_constraintTop_toTopOf="@+id/pressure" />
 
     <TextView
@@ -83,14 +94,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon" />
 
+    <ImageView
+        android:id="@+id/imageView_wind"
+        android:layout_width="30dp"
+        android:layout_height="@dimen/main_svg_dimen"
+        android:layout_marginEnd="@dimen/main_svg_margin_from_label"
+        android:src="@drawable/ic_wind"
+        android:paddingEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/wind"
+        app:layout_constraintEnd_toStartOf="@+id/wind"
+        app:layout_constraintTop_toTopOf="@+id/wind"
+        tools:ignore="RtlSymmetry" />
+
     <TextView
         android:id="@+id/wind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="9km/h"
         android:textColor="@color/weather_item_text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/pressure"
-        app:layout_constraintEnd_toEndOf="@+id/icon" />
+        app:layout_constraintBottom_toBottomOf="@+id/pressure"
+        app:layout_constraintEnd_toEndOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="@+id/pressure" />
 
     <TextView
         android:id="@+id/textView9"
@@ -99,7 +123,7 @@
         android:layout_marginTop="135dp"
         android:text="Today"
         android:textColor="@color/weather_item_para"
-        app:layout_constraintStart_toStartOf="@+id/humidity"
+        app:layout_constraintStart_toStartOf="@+id/imageView_humidity"
         app:layout_constraintTop_toBottomOf="@+id/humidity" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -112,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        tools:listitem="@layout/weather_time_item" />
+        tools:listitem="@layout/weather_hourly_item" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_day"
@@ -123,5 +147,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView_hour"
-        tools:listitem="@layout/weather_day_item" />
+        tools:listitem="@layout/weather_daily_item" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
