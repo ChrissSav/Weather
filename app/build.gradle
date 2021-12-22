@@ -25,12 +25,16 @@ android {
 
         debug {
             buildConfigField "String", "API_URL","\"https://api.openweathermap.org/\""
+            buildConfigField "String", "ACCESS_TOKEN","\"ACCESS_TOKEN\""
+
             versionNameSuffix "-debug"
 
         }
 
         release {
             buildConfigField "String", "API_URL","\"https://api.openweathermap.org/\""
+            buildConfigField "String", "ACCESS_TOKEN","\"ACCESS_TOKEN\""
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
