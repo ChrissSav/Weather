@@ -93,5 +93,8 @@ dependencies {
     //Alerter
     implementation 'com.tapadoo.android:alerter:6.1.0'
 
+
+    //Android-SpinKit
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 }
 

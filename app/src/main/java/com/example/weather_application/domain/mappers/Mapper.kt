@@ -15,21 +15,13 @@ fun InfoResponseHourly.mapToInfoHourly(): InfoHourly =
         sunset, uvi, windSpeed, weather[0].mapWeather()
     )
 
-fun BaseResponse.mapToBase(): Base {
-
-    val currentDay = convertCurrentTimestampToFormat("EEEE")
-
-    val hoursTempList = hourly
-        .filter { convertTimestampToFormat(it.dt, "EEEE") == currentDay }
-        .map { it.mapToInfoHourly() }.toMutableList()
-
-    return Base(
+fun BaseResponse.mapToBase(): Base =
+    Base(
         lat, lon, current.mapToInfoHourly(),
-        hoursTempList,
+        hourly.map { it.mapToInfoHourly() }.toMutableList(),
         daily.map { it.mapToInfoDaily() }.toMutableList()
     )
 
-}
 
 fun WeatherInfoResponse.mapWeather(): Weather {
     val iconCode = when (id) {

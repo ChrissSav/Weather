@@ -7,6 +7,7 @@ import com.example.weather_application.R
 import com.example.weather_application.data.base.BaseActivity
 import com.example.weather_application.databinding.ActivitySplashBinding
 import com.example.weather_application.util.openActivityWithFade
+import com.example.weather_application.util.typeWrite
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 

@@ -1,14 +1,19 @@
 package com.example.weather_application.ui.fragments
 
 import android.annotation.SuppressLint
+import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.example.weather_application.R
 import com.example.weather_application.data.base.BaseFragment
 import com.example.weather_application.databinding.FragmentHomeBinding
 import com.example.weather_application.ui.MainViewModel
 import com.example.weather_application.ui.adapters.DailyAdapter
 import com.example.weather_application.ui.adapters.HoursAdapter
+import com.example.weather_application.util.convertTimestampToFormat
 import com.example.weather_application.util.firstLetterUpperCase
+import com.example.weather_application.util.setAnyText
+import kotlin.math.round
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -23,21 +28,33 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         viewModel.weather.observe(this, Observer {
             with(binding) {
+
+
                 temperature.setAnyText(round(it.current.temp).toInt())
                 weather.setAnyText(it.current.weather.description.firstLetterUpperCase())
                 wind.setAnyText(getString(R.string.wind_placeholder, it.current.windSpeed))
                 pressure.setAnyText(getString(R.string.pressure_placeholder, it.current.pressure / 1000))
                 humidity.setAnyText(getString(R.string.humidity_placeholder, it.current.humidity))
 
-                binding.icon.setImageResource(it.current.weather.icon)
+                icon.setImageResource(it.current.weather.icon)
 
                 sunrise.setAnyText(convertTimestampToFormat(it.current.sunrise, "HH:mm"))
                 sunset.setAnyText(convertTimestampToFormat(it.current.sunset, "HH:mm"))
 
-                (binding.recyclerViewHour.adapter as HoursAdapter).submitList(it.hourly)
-                (binding.recyclerViewDay.adapter as DailyAdapter).submitList(it.daily)
+                (recyclerViewHour.adapter as HoursAdapter).submitList(it.hourly)
+                (recyclerViewDay.adapter as DailyAdapter).submitList(it.daily)
+
+                scrollView.visibility = View.VISIBLE
 
 
+            }
+        })
+
+        viewModel.loader.observe(this, Observer {
+            if (it) {
+                binding.spinKit.visibility = View.VISIBLE
+            } else {
+                binding.spinKit.visibility = View.GONE
             }
         })
     }
@@ -47,6 +64,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.recyclerViewHour.adapter = HoursAdapter()
         binding.recyclerViewDay.adapter = DailyAdapter()
 
-       // viewModel.loadWeather(40.6403167, 22.9352716)
+        viewModel.loadWeather(40.6403167, 22.9352716)
     }
 }

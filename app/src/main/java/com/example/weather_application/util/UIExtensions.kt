@@ -41,7 +41,7 @@ fun TextView.typeWrite(lifecycleOwner: LifecycleOwner, text: String, intervalMs:
             delay(intervalMs)
             this@typeWrite.text = text.take(it + 1)
         }
-        delay(intervalMs)
+        delay(400L)
         function.invoke()
     }
 }

@@ -9,6 +9,7 @@ import com.example.weather_application.databinding.WeatherDailyItemBinding
 import com.example.weather_application.domain.dto.InfoDaily
 import com.example.weather_application.util.InfoDailyDiffCallback
 import com.example.weather_application.util.convertTimestampToFormat
+import com.example.weather_application.util.setAnyText
 import kotlin.math.round
 
 
