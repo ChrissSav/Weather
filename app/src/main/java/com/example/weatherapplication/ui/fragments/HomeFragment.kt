@@ -51,6 +51,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.recyclerViewHour.adapter = HoursAdapter()
         binding.recyclerViewDay.adapter = DailyAdapter()
 
-        viewModel.loadWeather(40.6403167, 22.9352716)
+       // viewModel.loadWeather(40.6403167, 22.9352716)
     }
 }

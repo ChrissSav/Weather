@@ -1,9 +1,15 @@
 package com.example.weatherapplication.util
 
 import android.app.Activity
+import android.content.Intent
 import android.widget.TextView
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import com.example.weatherapplication.R
 import com.tapadoo.alerter.Alerter
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import java.util.*
 
 
 fun TextView.setAnyText(text: Any) {
@@ -26,4 +32,22 @@ fun Activity.createAlerter(msg: String) {
         .setDuration(2500)
         .enableSwipeToDismiss() //seems to not work well with OnClickListener
         .show()
+}
+
+fun TextView.typeWrite(lifecycleOwner: LifecycleOwner, text: String, intervalMs: Long, function: () -> Unit) {
+    this@typeWrite.text = ""
+    lifecycleOwner.lifecycleScope.launch {
+        repeat(text.length) {
+            delay(intervalMs)
+            this@typeWrite.text = text.take(it + 1)
+        }
+        delay(intervalMs)
+        function.invoke()
+    }
+}
+
+fun Activity.openActivityWithFade(intent: Intent) {
+    startActivity(intent)
+    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+    finish()
 }
