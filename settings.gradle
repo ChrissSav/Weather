@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Android_Kotlin_Demo"
+rootProject.name = "Weather_Application"
