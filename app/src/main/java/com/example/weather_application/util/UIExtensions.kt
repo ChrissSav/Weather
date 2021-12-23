@@ -5,6 +5,8 @@ import android.content.Intent
 import android.widget.TextView
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import com.example.weather_application.R
 import com.tapadoo.alerter.Alerter
 import kotlinx.coroutines.delay
@@ -50,4 +52,19 @@ fun Activity.openActivityWithFade(intent: Intent) {
     startActivity(intent)
     overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     finish()
+}
+
+
+fun NavController.navigateToDestination(actionId: Int) {
+    try {
+        getBackStackEntry(actionId)
+        popBackStack(actionId, false)
+    } catch (e: Exception) {
+        val navBuilder = NavOptions.Builder()
+        navBuilder.setEnterAnim(R.anim.fade_in)
+        navBuilder.setExitAnim(R.anim.fade_out)
+        navBuilder.setPopEnterAnim(R.anim.fade_in)
+        navBuilder.setPopExitAnim(R.anim.fade_out)
+        this.navigate(actionId, null, navBuilder.build())
+    }
 }

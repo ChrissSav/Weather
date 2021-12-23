@@ -3,8 +3,7 @@ package com.example.weather_application.domain.mappers
 import com.example.weather_application.R
 import com.example.weather_application.domain.dto.*
 import com.example.weather_application.framework.dto.*
-import com.example.weather_application.util.convertCurrentTimestampToFormat
-import com.example.weather_application.util.convertTimestampToFormat
+import java.util.*
 
 fun InfoResponseDaily.mapToInfoDaily(): InfoDaily =
     InfoDaily(dt, temp.mapToTemp(), pressure, humidity, uvi, windSpeed, weather[0].mapWeather())
@@ -18,7 +17,7 @@ fun InfoResponseHourly.mapToInfoHourly(): InfoHourly =
 fun BaseResponse.mapToBase(): Base =
     Base(
         lat, lon, current.mapToInfoHourly(),
-        hourly.map { it.mapToInfoHourly() }.toMutableList(),
+        hourly.map { it.mapToInfoHourly() }.toMutableList().subList(1, hourly.size),
         daily.map { it.mapToInfoDaily() }.toMutableList()
     )
 
@@ -39,5 +38,12 @@ fun WeatherInfoResponse.mapWeather(): Weather {
 }
 
 
-fun TempResponse.mapToTemp(): Temp =
-    Temp(day, min, max, night, eve, morn)
+fun TempResponse.mapToTemp(): Temperature =
+    Temperature(day, min, max, night, eve, morn)
+
+
+fun DirectResponse.mapToDirect() = Direct(
+    localNames[Locale.getDefault().language] ?: localNames["en"].toString(), lat,
+    lon,
+    country
+)

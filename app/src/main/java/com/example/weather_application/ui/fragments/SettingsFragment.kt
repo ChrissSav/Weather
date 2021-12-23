@@ -1,14 +1,14 @@
 package com.example.weather_application.ui.fragments
 
 import com.example.weather_application.data.base.BaseFragment
-import com.example.weather_application.databinding.FragmentHomeBinding
+import com.example.weather_application.databinding.FragmentSettingsBinding
 
 
-class SettingsFragment : BaseFragment<FragmentHomeBinding>() {
+class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
 
 
-    override fun getViewBinding(): FragmentHomeBinding =
-        FragmentHomeBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentSettingsBinding =
+        FragmentSettingsBinding.inflate(layoutInflater)
 
     override fun setUpObservers() {
     }

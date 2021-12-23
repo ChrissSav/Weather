@@ -35,7 +35,6 @@ open class BaseViewModel : ViewModel() {
             try {
                 function.invoke()
             } catch (errorExc: Exception) {
-
                 handleError(errorExc)
             }
             loader.value = false
@@ -49,6 +48,7 @@ open class BaseViewModel : ViewModel() {
                 error.value = internalError(R.string.ERROR_INTERNET_CONNECTION)
             }
             else -> {
+               errorExc.printStackTrace()
                 error.value = internalError(R.string.ERROR_SOMETHING_WRONG)
             }
         }

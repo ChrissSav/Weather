@@ -1,9 +1,12 @@
 package com.example.weather_application.ui
 
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.example.weather_application.R
 import com.example.weather_application.data.base.BaseActivityViewModel
 import com.example.weather_application.databinding.ActivityMainBinding
 import com.example.weather_application.util.createAlerter
+import com.example.weather_application.util.navigateToDestination
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -27,20 +30,18 @@ class MainActivity : BaseActivityViewModel<ActivityMainBinding, MainViewModel>(M
 
     override fun setUpViews() {
 
-    //    navController = findNavController(R.id.nav_host_fragment)
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
-       // setupBottomNavMenu(navController)
+
+        binding.imageButtonFavorites.setOnClickListener {
+            navController.navigateToDestination(R.id.favoritesFragment)
+        }
+
+        binding.imageButtonSettings.setOnClickListener {
+            navController.navigateToDestination(R.id.settingsFragment)
+        }
+        viewModel.loadWeather("θεσσαλονικη", "paris", "nicosia", "μοσχα")
+
     }
 
-//    private fun setupBottomNavMenu(navController: NavController) {
-//        binding.bottomNavView.let {
-//            NavigationUI.setupWithNavController(it, navController)
-//            it.setOnItemReselectedListener { item ->
-//                if (item.isChecked) {
-//                    return@setOnItemReselectedListener
-//                }
-//            }
-//        }
-//
-//    }
 }

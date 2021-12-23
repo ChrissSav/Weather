@@ -28,8 +28,8 @@ class DailyAdapter : ListAdapter<InfoDaily, DailyAdapter.ViewHolder>(InfoDailyDi
             val currentItem = currentList[position]
 
             binding.day.text = convertTimestampToFormat(currentItem.dt, "EEEE")
-            binding.temperatureMax.setAnyText(round(currentItem.temp.max).toInt())
-            binding.temperature.setAnyText(round(currentItem.temp.min).toInt())
+            binding.temperatureMax.setAnyText(round(currentItem.temperature.max).toInt())
+            binding.temperature.setAnyText(round(currentItem.temperature.min).toInt())
             binding.icon.setImageResource(currentItem.weather.icon)
 
         }

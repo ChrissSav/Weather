@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.weather_application.data.base.BaseViewModel
 import com.example.weather_application.data.base.SingleLiveEvent
 import com.example.weather_application.domain.WeatherDataSource
-import com.example.weather_application.domain.dto.Base
+import com.example.weather_application.domain.dto.City
 
 class MainViewModel
 @ViewModelInject
@@ -15,14 +15,20 @@ constructor(
 ) : BaseViewModel() {
 
 
-    private val _weather = SingleLiveEvent<Base>()
-    val weather: LiveData<Base> = _weather
+    private val _cities = MutableLiveData<MutableList<City>>()
+    val cities: LiveData<MutableList<City>> = _cities
 
     val loader = SingleLiveEvent<Boolean>()
 
-    fun loadWeather(lat: Double, lot: Double) {
+    fun loadWeather(vararg cities: String) {
         launch(loader) {
-            _weather.value = weatherDataSource.oneCall(lat, lot)
+            val temp = mutableListOf<City>()
+            for (city in cities) {
+                val direct = weatherDataSource.geocode(city)
+                val weather = weatherDataSource.oneCall(direct.lat, direct.lon)
+                temp.add(City(direct, weather))
+            }
+            _cities.value = temp
         }
     }
 

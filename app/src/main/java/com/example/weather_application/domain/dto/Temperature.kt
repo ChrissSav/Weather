@@ -1,6 +1,6 @@
 package com.example.weather_application.domain.dto
 
-data class Temp(
+data class Temperature(
     val day: Double,
     val min: Double,
     val max: Double,

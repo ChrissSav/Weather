@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weather_application.R
 import com.example.weather_application.databinding.WeatherHourlyItemBinding
 import com.example.weather_application.domain.dto.InfoHourly
 import com.example.weather_application.util.InfoHourlyDiffCallback
@@ -29,7 +28,7 @@ class HoursAdapter : ListAdapter<InfoHourly, HoursAdapter.ViewHolder>(InfoHourly
             val currentItem = currentList[position]
 
             if (position == 0) {
-                binding.hour.text = binding.hour.context.resources.getString(R.string.now)
+                binding.hour.text = convertTimestampToFormat(currentItem.dt, "HH:mm")
             } else {
                 val previous = currentList[position - 1]
                 if (convertTimestampToFormat(currentItem.dt, "MMM d") != convertTimestampToFormat(previous.dt, "MMM d")) {
