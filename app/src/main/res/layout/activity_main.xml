@@ -23,7 +23,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/ripple"
-        android:src="@drawable/ic_favorite_border_24"
+        android:src="@drawable/ic_favorite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/bottom_nav_def" />
@@ -38,7 +38,7 @@
         android:background="@drawable/ripple"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/ic_settings_24dp"
+        android:src="@drawable/ic_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/bottom_nav_def" />

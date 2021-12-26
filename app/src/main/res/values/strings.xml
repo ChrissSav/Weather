@@ -11,7 +11,7 @@
     <string name="warning">Warning</string>
     <string name="ERROR_INTERNET_CONNECTION">No Internet Connection</string>
     <string name="ERROR_SOMETHING_WRONG">Oops! An error has occurred. *_*</string>
-    <string name="wind_placeholder" translatable="false">%s km/h</string>
+    <string name="wind_placeholder" translatable="false">%s m/s</string>
     <string name="pressure_placeholder" translatable="false">%s atm</string>
     <string name="humidity_placeholder" translatable="false">%s %%</string>
     <!--

@@ -2,6 +2,7 @@ package com.example.weather_application.ui.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ import com.example.weather_application.util.firstLetterUpperCase
 import com.example.weather_application.util.setAnyText
 import kotlin.math.round
 
+const val HPA = 0.000986923266716F
 
 class ViewPagerAdapter : ListAdapter<City, ViewPagerAdapter.ViewHolder>(CityDiffCallback()) {
 
@@ -27,16 +29,45 @@ class ViewPagerAdapter : ListAdapter<City, ViewPagerAdapter.ViewHolder>(CityDiff
 
 
         with(holder) {
+
+
+            val listener = object : RecyclerView.OnItemTouchListener {
+                override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+                    val action = e.action
+                    return if (binding.recyclerViewHour.canScrollHorizontally(RecyclerView.FOCUS_FORWARD)) {
+                        when (action) {
+                            MotionEvent.ACTION_MOVE -> rv.parent
+                                .requestDisallowInterceptTouchEvent(true)
+                        }
+                        false
+                    } else {
+                        when (action) {
+                            android.view.MotionEvent.ACTION_MOVE -> rv.parent
+                                .requestDisallowInterceptTouchEvent(false)
+                        }
+                        binding.recyclerViewHour.removeOnItemTouchListener(this)
+                        true
+                    }
+                }
+
+                override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {}
+                override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {}
+            }
+
+            binding.recyclerViewHour.addOnItemTouchListener(listener)
+
+
             val resources = binding.temperature.context.resources
             val currentItem = currentList[position]
             val currentWeather = currentItem.weatherInfo
 
             with(binding) {
 
+                title.text = currentItem.name
                 temperature.setAnyText(round(currentWeather.current.temp).toInt())
                 weather.setAnyText(currentWeather.current.weather.description.firstLetterUpperCase())
                 wind.setAnyText(resources.getString(R.string.wind_placeholder, currentWeather.current.windSpeed))
-                pressure.setAnyText(resources.getString(R.string.pressure_placeholder, currentWeather.current.pressure / 1000))
+                pressure.setAnyText(resources.getString(R.string.pressure_placeholder, round(currentWeather.current.pressure * HPA)))
                 humidity.setAnyText(resources.getString(R.string.humidity_placeholder, currentWeather.current.humidity))
 
                 icon.setImageResource(currentWeather.current.weather.icon)

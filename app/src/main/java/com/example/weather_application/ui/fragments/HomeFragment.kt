@@ -1,14 +1,10 @@
 package com.example.weather_application.ui.fragments
 
 import android.annotation.SuppressLint
-import android.view.Gravity
 import android.view.View
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.viewpager2.widget.ViewPager2
-import com.example.weather_application.R
 import com.example.weather_application.data.base.BaseFragment
 import com.example.weather_application.databinding.FragmentHomeBinding
 import com.example.weather_application.domain.dto.City
@@ -54,31 +50,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         binding.viewPager.adapter = ViewPagerAdapter()
         binding.viewPager.setPageTransformer(ZoomOutPageTransformer())
-
-        /* binding.textSwitcher.setFactory {
-             textView = TextView(this@HomeFragment.context)
-             textView.setTextColor(Color.BLACK)
-             //  textView.textSize = 60F
-             textView.gravity = Gravity.CENTER_HORIZONTAL
-             textView
-         }*/
-
-        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                binding.textSwitcher.setText(citiesList[position].name)
-                mLastPage = position;
-                super.onPageSelected(position)
-            }
-
-        })
-
-        binding.textSwitcher.setFactory {
-            textView = TextView(this@HomeFragment.context)
-            textView.setTextColor(ContextCompat.getColor(this@HomeFragment.context!!, R.color.weather_item_text));
-            textView.gravity = Gravity.CENTER
-            textView
-        }
-
 
     }
 

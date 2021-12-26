@@ -1,5 +1,6 @@
 package com.example.weather_application.ui
 
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.weather_application.R
@@ -32,6 +33,20 @@ class MainActivity : BaseActivityViewModel<ActivityMainBinding, MainViewModel>(M
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+
+
+            if (destination.id != R.id.homeFragment) {
+                binding.imageButtonSettings.visibility = View.GONE
+                binding.imageButtonFavorites.visibility = View.GONE
+            } else {
+                binding.imageButtonSettings.visibility = View.VISIBLE
+                binding.imageButtonFavorites.visibility = View.VISIBLE
+            }
+
+
+        }
+
 
         binding.imageButtonFavorites.setOnClickListener {
             navController.navigateToDestination(R.id.favoritesFragment)
@@ -40,7 +55,7 @@ class MainActivity : BaseActivityViewModel<ActivityMainBinding, MainViewModel>(M
         binding.imageButtonSettings.setOnClickListener {
             navController.navigateToDestination(R.id.settingsFragment)
         }
-        viewModel.loadWeather("θεσσαλονικη", "paris", "nicosia", "μοσχα")
+        viewModel.loadWeather("θεσσαλονικη", "larisa", "berlin")
 
     }
 
