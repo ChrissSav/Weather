@@ -11,14 +11,14 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="16dp"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
-        android:text="Search"
+        android:text="@string/search"
         android:textColor="@color/weather_item_para"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:drawableEndCompat="@drawable/ic_edit"
         app:drawableStartCompat="@drawable/ic_search"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,17 +26,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:spanCount="2"
-        android:padding="8dp"
-        tools:listitem="@layout/weather_place_item" />
+        tools:listitem="@layout/city_place_item" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,11 +9,13 @@
     <string name="now">Now</string>
     <string name="today">Today</string>
     <string name="warning">Warning</string>
+    <string name="search">Search</string>
     <string name="ERROR_INTERNET_CONNECTION">No Internet Connection</string>
     <string name="ERROR_SOMETHING_WRONG">Oops! An error has occurred. *_*</string>
     <string name="wind_placeholder" translatable="false">%s m/s</string>
     <string name="pressure_placeholder" translatable="false">%s atm</string>
     <string name="humidity_placeholder" translatable="false">%s %%</string>
+
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
