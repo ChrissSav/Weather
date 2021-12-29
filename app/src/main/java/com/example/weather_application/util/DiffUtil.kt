@@ -3,6 +3,7 @@ package com.example.weather_application.util
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
 import com.example.weather_application.domain.dto.City
+import com.example.weather_application.domain.dto.Direct
 import com.example.weather_application.domain.dto.InfoDaily
 import com.example.weather_application.domain.dto.InfoHourly
 
@@ -38,6 +39,19 @@ class CityDiffCallback : DiffUtil.ItemCallback<City>() {
 
     @SuppressLint("DiffUtilEquals")
     override fun areContentsTheSame(oldItem: City, newItem: City): Boolean {
+        return oldItem == newItem
+    }
+}
+
+
+class DirectDiffCallback : DiffUtil.ItemCallback<Direct>() {
+    override fun areItemsTheSame(oldItem: Direct, newItem: Direct): Boolean {
+        return oldItem.name == newItem.name
+    }
+
+
+    @SuppressLint("DiffUtilEquals")
+    override fun areContentsTheSame(oldItem: Direct, newItem: Direct): Boolean {
         return oldItem == newItem
     }
 }

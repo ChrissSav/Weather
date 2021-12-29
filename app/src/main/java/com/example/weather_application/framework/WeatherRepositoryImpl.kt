@@ -15,7 +15,7 @@ class WeatherRepositoryImpl(
 
     override suspend fun geocode(query: String) =
         networkCall {
-            service.geocode(query).handleCall()[0]
+            service.geocode(query).handleCall()
         }
 
 }

@@ -5,4 +5,7 @@ data class Direct(
     val lat: Double,
     val lon: Double,
     val country: String
-)
+) {
+    val fullName
+        get() = "$name ($country)"
+}

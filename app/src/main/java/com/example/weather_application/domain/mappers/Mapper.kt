@@ -42,8 +42,17 @@ fun TempResponse.mapToTemp(): Temperature =
     Temperature(day, min, max, night, eve, morn)
 
 
-fun DirectResponse.mapToDirect() = Direct(
-    localNames[Locale.getDefault().language] ?: localNames["en"].toString(), lat,
-    lon,
-    country
-)
+fun DirectResponse.mapToDirect(): Direct {
+    var loName = this.name
+
+    this.localNames?.let {
+        loName = it[Locale.getDefault().language] ?: it["en"].toString()
+    }
+
+
+    return Direct(
+        loName, lat,
+        lon,
+        country
+    )
+}

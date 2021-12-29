@@ -7,5 +7,5 @@ interface WeatherDataSource {
 
     suspend fun oneCall(lat: Double, lon: Double): Base
 
-    suspend fun geocode(query: String): Direct
+    suspend fun geocode(query: String): MutableList<Direct>
 }

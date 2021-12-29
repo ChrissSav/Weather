@@ -12,6 +12,8 @@ class WeatherDataSourceImpl(
     override suspend fun oneCall(lat: Double, lon: Double) =
         weatherRepository.oneCall(lat, lon).mapToBase()
 
-    override suspend fun geocode(query: String): Direct =
-        weatherRepository.geocode(query).mapToDirect()
+    override suspend fun geocode(query: String): MutableList<Direct> =
+        weatherRepository.geocode(query)
+            .map { it.mapToDirect() }
+            .toMutableList()
 }

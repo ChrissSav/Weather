@@ -7,5 +7,5 @@ interface WeatherRepository {
 
     suspend fun oneCall(lat: Double, lon: Double): BaseResponse
 
-    suspend fun geocode(query: String): DirectResponse
+    suspend fun geocode(query: String): MutableList<DirectResponse>
 }
