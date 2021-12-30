@@ -15,5 +15,6 @@ class WeatherDataSourceImpl(
     override suspend fun geocode(query: String): MutableList<Direct> =
         weatherRepository.geocode(query)
             .map { it.mapToDirect() }
+            .filter { it.name != "null" }
             .toMutableList()
 }

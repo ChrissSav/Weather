@@ -63,7 +63,7 @@ class ViewPagerAdapter : ListAdapter<City, ViewPagerAdapter.ViewHolder>(CityDiff
 
             with(binding) {
 
-                title.text = currentItem.name
+                title.text = currentItem.fullName
                 temperature.setAnyText(round(currentWeather.current.temp).toInt())
                 weather.setAnyText(currentWeather.current.weather.description.firstLetterUpperCase())
                 wind.setAnyText(resources.getString(R.string.wind_placeholder, currentWeather.current.windSpeed))

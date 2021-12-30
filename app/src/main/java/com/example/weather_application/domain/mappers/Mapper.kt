@@ -31,15 +31,13 @@ fun WeatherInfoResponse.mapWeather(): Weather {
         in 700..799 -> R.drawable.ic_mist
         800 -> R.drawable.ic_sun
         else -> R.drawable.ic_few_clouds
-
     }
 
     return Weather(main, description, iconCode)
 }
 
 
-fun TempResponse.mapToTemp(): Temperature =
-    Temperature(day, min, max, night, eve, morn)
+fun TempResponse.mapToTemp(): Temperature = Temperature(day, min, max, night, eve, morn)
 
 
 fun DirectResponse.mapToDirect(): Direct {
@@ -49,10 +47,5 @@ fun DirectResponse.mapToDirect(): Direct {
         loName = it[Locale.getDefault().language] ?: it["en"].toString()
     }
 
-
-    return Direct(
-        loName, lat,
-        lon,
-        country
-    )
+    return Direct(loName, lat, lon, country)
 }

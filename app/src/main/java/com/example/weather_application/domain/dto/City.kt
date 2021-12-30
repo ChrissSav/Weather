@@ -5,6 +5,6 @@ data class City(
     val details: Direct,
     val weatherInfo: Base
 ) {
-    val name
+    val fullName
         get() = "${details.name} (${details.country})"
 }

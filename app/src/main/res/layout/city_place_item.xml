@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="8dp"
-    android:background="@drawable/weather_place_item_background"
+    android:background="@drawable/weather_place_item_background_20dp"
     android:orientation="horizontal"
     android:padding="16dp">
 
@@ -80,6 +80,16 @@
         app:layout_constraintBottom_toBottomOf="@+id/humidity"
         app:layout_constraintEnd_toEndOf="@+id/icon"
         app:layout_constraintTop_toTopOf="@+id/humidity" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:background="@drawable/weather_place_item_background_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_delete" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@ package com.example.weather_application.ui.fragments
 
 import android.annotation.SuppressLint
 import android.view.View
-import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.weather_application.data.base.BaseFragment
@@ -17,8 +16,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private val viewModel: MainViewModel by activityViewModels()
     private val citiesList = mutableListOf<City>()
-    private lateinit var textView: TextView
-    private var mLastPage = 0
 
     override fun getViewBinding(): FragmentHomeBinding =
         FragmentHomeBinding.inflate(layoutInflater)
@@ -33,10 +30,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             (binding.viewPager.adapter as ViewPagerAdapter).submitList(citiesList)
             binding.dotsIndicator.setViewPager2(binding.viewPager)
 
+            binding.dotsIndicator.visibility = if (citiesList.isNotEmpty()) View.VISIBLE else View.GONE
+
         })
 
         viewModel.loader.observe(this, Observer {
             if (it) {
+                binding.dotsIndicator.visibility = View.GONE
                 binding.spinKit.visibility = View.VISIBLE
             } else {
                 binding.spinKit.visibility = View.GONE

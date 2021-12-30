@@ -16,6 +16,7 @@
         app:dotsColor="@color/bottom_nav_active"
         app:dotsCornerRadius="8dp"
         app:dotsSize="8dp"
+        android:visibility="gone"
         app:dotsSpacing="4dp"
         app:dotsStrokeColor="@color/bottom_nav_def"
         app:dotsStrokeWidth="2dp"
@@ -36,7 +37,7 @@
 
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spin_kit"
-        style="@style/SpinKitView.CubeGrid"
+        style="@style/SpinKitView.FoldingCube"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

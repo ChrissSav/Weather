@@ -1,5 +1,6 @@
 package com.example.weather_application.framework.utils
 
+import androidx.lifecycle.MutableLiveData
 import com.example.weather_application.framework.BaseApiException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -36,5 +37,8 @@ suspend fun <T : Any> roomCall(
     }
 
 
-
-
+fun <T : Any> MutableLiveData<MutableList<T>>.addItem(item: T) {
+    val temp = this.value ?: mutableListOf()
+    temp.add(item)
+    this.value = temp
+}

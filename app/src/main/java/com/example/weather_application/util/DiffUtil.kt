@@ -33,7 +33,7 @@ class InfoDailyDiffCallback : DiffUtil.ItemCallback<InfoDaily>() {
 
 class CityDiffCallback : DiffUtil.ItemCallback<City>() {
     override fun areItemsTheSame(oldItem: City, newItem: City): Boolean {
-        return oldItem.name == newItem.name
+        return oldItem.fullName == newItem.fullName
     }
 
 
@@ -43,6 +43,17 @@ class CityDiffCallback : DiffUtil.ItemCallback<City>() {
     }
 }
 
+class CityPairDiffCallback : DiffUtil.ItemCallback<Pair<City, Boolean>>() {
+    override fun areItemsTheSame(oldItem: Pair<City, Boolean>, newItem: Pair<City, Boolean>): Boolean {
+        return oldItem.first.fullName == newItem.first.fullName
+    }
+
+
+    @SuppressLint("DiffUtilEquals")
+    override fun areContentsTheSame(oldItem: Pair<City, Boolean>, newItem: Pair<City, Boolean>): Boolean {
+        return oldItem.first == newItem.first && oldItem.second == newItem.second
+    }
+}
 
 class DirectDiffCallback : DiffUtil.ItemCallback<Direct>() {
     override fun areItemsTheSame(oldItem: Direct, newItem: Direct): Boolean {
