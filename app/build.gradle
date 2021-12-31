@@ -102,5 +102,16 @@ dependencies {
 
     //Android-SpinKit
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+
+    //Room
+    def room = "2.2.5"
+    implementation "androidx.room:room-runtime:$room"
+    implementation "androidx.room:room-ktx:$room"
+    kapt "androidx.room:room-compiler:$room"
+
+    //Android Debug Database
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
 }
 

@@ -23,29 +23,13 @@ constructor(
     private val _directions = SingleLiveEvent<MutableList<Direct>>()
     val directions: LiveData<MutableList<Direct>> = _directions
 
-    private val directs = mutableListOf(Direct("Θεσσαλονίκη", 40.6403167, 22.9352716, "GR"))
-
-
     val loader = SingleLiveEvent<Boolean>()
-
-    fun loadWeather(vararg directs: Direct) {
-        launch(loader) {
-
-            val temp = mutableListOf<City>()
-            for (direct in directs) {
-                //val direct = weatherDataSource.geocode(city)
-                val weather = weatherDataSource.oneCall(direct.lat, direct.lon)
-                temp.add(City(direct, weather))
-            }
-            _cities.value = temp
-        }
-    }
 
     fun loadWeather() {
         launch(loader) {
+            val directs = weatherDataSource.getLocalDirects()
             val temp = mutableListOf<City>()
             for (direct in directs) {
-                //val direct = weatherDataSource.geocode(city)
                 val weather = weatherDataSource.oneCall(direct.lat, direct.lon)
                 temp.add(City(direct, weather))
             }
@@ -54,10 +38,10 @@ constructor(
     }
 
 
-    fun addWeather(direct: Direct) {
+    fun addDirect(direct: Direct) {
         launch(loader) {
-            //val direct = weatherDataSource.geocode(city)
-            val weather = weatherDataSource.oneCall(direct.lat, direct.lon)
+            val directT = weatherDataSource.saveLocalDirect(direct)
+            val weather = weatherDataSource.oneCall(directT.lat, directT.lon)
             _cities.addItem((City(direct, weather)))
         }
     }
@@ -65,6 +49,7 @@ constructor(
 
     fun deleteCity(city: City) {
         launch {
+            weatherDataSource.deleteLocalDirect(city.details)
             val temp = _cities.value ?: mutableListOf()
             _cities.value = temp.filter { it.fullName != city.fullName }.toMutableList()
         }

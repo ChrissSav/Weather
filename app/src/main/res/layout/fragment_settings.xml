@@ -148,7 +148,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pressure">
 
-        <com.example.weather_application.ui.materials.CustomView
+        <com.example.weather_application.util.materials.CustomView
             android:id="@+id/temperature_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
             app:title="Metric" />
 
 
-        <com.example.weather_application.ui.materials.CustomView
+        <com.example.weather_application.util.materials.CustomView
             android:id="@+id/source"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

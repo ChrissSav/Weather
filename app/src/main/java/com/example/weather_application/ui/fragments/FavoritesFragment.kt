@@ -89,7 +89,7 @@ class FavoritesFragment : BaseFragment<FragmentFavoritesBinding>() {
 
     private fun onItemClick(direct: Direct) {
         (binding.recyclerView.adapter as FavoritesAdapter).submitList(cities.map { Pair(it.first, false) }.toMutableList())
-        viewModel.addWeather(direct)
+        viewModel.addDirect(direct)
         binding.search.text.clear()
     }
 
