@@ -25,6 +25,9 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
     override fun setUpObservers() {
         viewModel.cities.observe(this, Observer {
 
+            if (it.isEmpty())
+                return@Observer
+
             val currentItem = it.first()
             val currentWeather = currentItem.weatherInfo
 

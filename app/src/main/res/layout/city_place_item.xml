@@ -59,16 +59,40 @@
         app:layout_constraintStart_toStartOf="@+id/city"
         app:layout_constraintTop_toBottomOf="@+id/city" />
 
+
+    <ImageView
+        android:id="@+id/imageView_humidity"
+        android:layout_width="@dimen/main_svg_dimen"
+        android:layout_height="@dimen/main_svg_dimen"
+        android:src="@drawable/ic_humidity"
+        app:layout_constraintBottom_toBottomOf="@+id/humidity"
+        app:layout_constraintStart_toStartOf="@+id/country"
+        app:layout_constraintTop_toTopOf="@+id/humidity" />
+
     <TextView
         android:id="@+id/humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_svg_margin_from_label"
         android:layout_marginTop="16dp"
         android:text="17%"
         android:textColor="@color/weather_item_text"
         android:textSize="@dimen/label"
-        app:layout_constraintStart_toStartOf="@+id/country"
+        app:layout_constraintStart_toEndOf="@+id/imageView_humidity"
         app:layout_constraintTop_toBottomOf="@+id/country" />
+
+    <ImageView
+        android:id="@+id/imageView_wind"
+        android:layout_width="30dp"
+        android:layout_height="@dimen/main_svg_dimen"
+        android:layout_marginEnd="@dimen/main_svg_margin_from_label"
+        android:paddingEnd="4dp"
+        android:src="@drawable/ic_wind"
+        app:layout_constraintBottom_toBottomOf="@+id/wind"
+        app:layout_constraintEnd_toStartOf="@+id/wind"
+        app:layout_constraintTop_toTopOf="@+id/wind"
+        tools:ignore="RtlSymmetry" />
+
 
     <TextView
         android:id="@+id/wind"

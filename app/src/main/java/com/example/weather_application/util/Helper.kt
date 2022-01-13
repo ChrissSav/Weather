@@ -22,3 +22,11 @@ fun currentTimeStamp(): Long {
 fun convertCurrentTimestampToFormat(format: String): String {
     return convertTimestampToFormat(currentTimeStamp(), format)
 }
+
+fun getAppLanguage(): String {
+    var lang = "el"
+    if (SUPPORTED_LANGUAGES.contains(Locale.getDefault().language))
+        lang = Locale.getDefault().language
+
+    return lang;
+}

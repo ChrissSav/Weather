@@ -3,7 +3,7 @@ package com.example.weather_application.domain.mappers
 import com.example.weather_application.R
 import com.example.weather_application.domain.dto.*
 import com.example.weather_application.framework.dto.*
-import java.util.*
+import com.example.weather_application.util.getAppLanguage
 
 fun InfoResponseDaily.mapToInfoDaily(): InfoDaily =
     InfoDaily(dt, temp.mapToTemp(), pressure, humidity, uvi, windSpeed, weather[0].mapWeather())
@@ -40,12 +40,15 @@ fun WeatherInfoResponse.mapWeather(): Weather {
 fun TempResponse.mapToTemp(): Temperature = Temperature(day, min, max, night, eve, morn)
 
 
-fun DirectResponse.mapToDirect(): Direct {
-    var loName = this.name
+fun DirectResponse.mapToDirect(): Direct? {
+    var loName: String? = this.name
 
     this.localNames?.let {
-        loName = it[Locale.getDefault().language] ?: it["en"].toString()
+        loName = it[getAppLanguage()] ?: it["en"]
     }
 
-    return Direct(loName, lat, lon, country)
+    if (loName == null)
+        return null;
+
+    return Direct(loName.toString(), lat, lon, country)
 }

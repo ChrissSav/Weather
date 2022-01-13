@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="now">Nyní</string>
+    <string name="today">Dnes</string>
+    <string name="warning">Varování</string>
+    <string name="search">search</string>
+    <string name="ERROR_INTERNET_CONNECTION">Žádné internetové připojení</string>
+    <string name="ERROR_SOMETHING_WRONG">Jejda! Došlo k chybě. *_*</string>
+</resources>

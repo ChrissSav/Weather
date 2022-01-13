@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="now">Сейчас</string>
+    <string name="today">Сегодня</string>
+    <string name="warning">Предупреждение</string>
+    <string name="search">Поиск</string>
+    <string name="ERROR_INTERNET_CONNECTION">Нет соединения с интернетом</string>
+    <string name="ERROR_SOMETHING_WRONG">Ой! Произошла ошибка. *_*</string>
+</resources>

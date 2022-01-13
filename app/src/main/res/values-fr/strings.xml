@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="now">À présent</string>
+    <string name="today">Aujourd\'hui</string>
+    <string name="warning">Avertissement</string>
+    <string name="search">Chercher</string>
+    <string name="ERROR_INTERNET_CONNECTION">Pas de connexion Internet</string>
+    <string name="ERROR_SOMETHING_WRONG">Oups ! Une erreur est survenue. *_*</string>
+</resources>
