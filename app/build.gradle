@@ -17,6 +17,8 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
+        archivesBaseName = "$applicationId-v$versionCode($versionName)"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,7 +28,6 @@ android {
         debug {
             buildConfigField "String", "API_URL","\"https://api.openweathermap.org/\""
             buildConfigField "String", "ACCESS_TOKEN","\"ACCESS_TOKEN\""
-
             versionNameSuffix "-debug"
 
         }
@@ -34,7 +35,6 @@ android {
         release {
             buildConfigField "String", "API_URL","\"https://api.openweathermap.org/\""
             buildConfigField "String", "ACCESS_TOKEN","\"ACCESS_TOKEN\""
-
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
