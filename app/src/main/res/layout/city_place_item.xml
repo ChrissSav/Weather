@@ -90,8 +90,7 @@
         android:src="@drawable/ic_wind"
         app:layout_constraintBottom_toBottomOf="@+id/wind"
         app:layout_constraintEnd_toStartOf="@+id/wind"
-        app:layout_constraintTop_toTopOf="@+id/wind"
-        tools:ignore="RtlSymmetry" />
+        app:layout_constraintTop_toTopOf="@+id/wind" />
 
 
     <TextView
@@ -109,8 +108,8 @@
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="4dp"
         android:background="@drawable/weather_place_item_background_8dp"
+        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_delete" />
