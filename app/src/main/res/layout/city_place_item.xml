@@ -1,118 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_margin="8dp"
-    android:background="@drawable/weather_place_item_background_20dp"
-    android:orientation="horizontal"
-    android:padding="16dp">
+    android:elevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp">
 
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="22"
-        android:textColor="@color/weather_item_text"
-        android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="8dp"
+        android:background="@drawable/weather_place_item_background_20dp"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:text="o"
-        android:textColor="@color/weather_item_text"
-        app:layout_constraintStart_toEndOf="@+id/temperature"
-        app:layout_constraintTop_toTopOf="@+id/temperature" />
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22"
+            android:textColor="@color/weather_item_text"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_sun"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/temperature" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:text="o"
+            android:textColor="@color/weather_item_text"
+            app:layout_constraintStart_toEndOf="@+id/temperature"
+            app:layout_constraintTop_toTopOf="@+id/temperature" />
 
-    <TextView
-        android:id="@+id/city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="New York"
-        android:textColor="@color/weather_item_text"
-        android:textSize="@dimen/label"
-        app:layout_constraintStart_toStartOf="@+id/temperature"
-        app:layout_constraintTop_toBottomOf="@+id/temperature" />
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_sun"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/temperature" />
 
-    <TextView
-        android:id="@+id/country"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="USA"
-        android:textColor="@color/weather_item_para"
-        android:textSize="@dimen/label"
-        app:layout_constraintStart_toStartOf="@+id/city"
-        app:layout_constraintTop_toBottomOf="@+id/city" />
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="New York"
+            android:textColor="@color/weather_item_text"
+            android:textSize="@dimen/label"
+            app:layout_constraintStart_toStartOf="@+id/temperature"
+            app:layout_constraintTop_toBottomOf="@+id/temperature" />
 
-
-    <ImageView
-        android:id="@+id/imageView_humidity"
-        android:layout_width="@dimen/main_svg_dimen"
-        android:layout_height="@dimen/main_svg_dimen"
-        android:src="@drawable/ic_humidity"
-        app:layout_constraintBottom_toBottomOf="@+id/humidity"
-        app:layout_constraintStart_toStartOf="@+id/country"
-        app:layout_constraintTop_toTopOf="@+id/humidity" />
-
-    <TextView
-        android:id="@+id/humidity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/main_svg_margin_from_label"
-        android:layout_marginTop="16dp"
-        android:text="17%"
-        android:textColor="@color/weather_item_text"
-        android:textSize="@dimen/label"
-        app:layout_constraintStart_toEndOf="@+id/imageView_humidity"
-        app:layout_constraintTop_toBottomOf="@+id/country" />
-
-    <ImageView
-        android:id="@+id/imageView_wind"
-        android:layout_width="30dp"
-        android:layout_height="@dimen/main_svg_dimen"
-        android:layout_marginEnd="@dimen/main_svg_margin_from_label"
-        android:paddingEnd="4dp"
-        android:src="@drawable/ic_wind"
-        app:layout_constraintBottom_toBottomOf="@+id/wind"
-        app:layout_constraintEnd_toStartOf="@+id/wind"
-        app:layout_constraintTop_toTopOf="@+id/wind" />
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="USA"
+            android:textColor="@color/weather_item_para"
+            android:textSize="@dimen/label"
+            app:layout_constraintStart_toStartOf="@+id/city"
+            app:layout_constraintTop_toBottomOf="@+id/city" />
 
 
-    <TextView
-        android:id="@+id/wind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="7km/h"
-        android:textColor="@color/weather_item_text"
-        android:textSize="@dimen/label"
-        app:layout_constraintBottom_toBottomOf="@+id/humidity"
-        app:layout_constraintEnd_toEndOf="@+id/icon"
-        app:layout_constraintTop_toTopOf="@+id/humidity" />
+        <ImageView
+            android:id="@+id/imageView_humidity"
+            android:layout_width="@dimen/main_svg_dimen"
+            android:layout_height="@dimen/main_svg_dimen"
+            android:src="@drawable/ic_humidity"
+            app:layout_constraintBottom_toBottomOf="@+id/humidity"
+            app:layout_constraintStart_toStartOf="@+id/country"
+            app:layout_constraintTop_toTopOf="@+id/humidity" />
 
-    <ImageView
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/weather_place_item_background_8dp"
-        android:padding="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_delete" />
+        <TextView
+            android:id="@+id/humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_svg_margin_from_label"
+            android:layout_marginTop="16dp"
+            android:text="17%"
+            android:textColor="@color/weather_item_text"
+            android:textSize="@dimen/label"
+            app:layout_constraintStart_toEndOf="@+id/imageView_humidity"
+            app:layout_constraintTop_toBottomOf="@+id/country" />
+
+        <ImageView
+            android:id="@+id/imageView_wind"
+            android:layout_width="30dp"
+            android:layout_height="@dimen/main_svg_dimen"
+            android:layout_marginEnd="@dimen/main_svg_margin_from_label"
+            android:paddingEnd="4dp"
+            android:src="@drawable/ic_wind"
+            app:layout_constraintBottom_toBottomOf="@+id/wind"
+            app:layout_constraintEnd_toStartOf="@+id/wind"
+            app:layout_constraintTop_toTopOf="@+id/wind" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7km/h"
+            android:textColor="@color/weather_item_text"
+            android:textSize="@dimen/label"
+            app:layout_constraintBottom_toBottomOf="@+id/humidity"
+            app:layout_constraintEnd_toEndOf="@+id/icon"
+            app:layout_constraintTop_toTopOf="@+id/humidity" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/weather_place_item_background_8dp"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_delete" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
