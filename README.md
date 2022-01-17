@@ -3,10 +3,12 @@
 - MVVM
 - Clean Architecture
 - Dependency Injection
+- Local Database
 
 ### Libraries
 - [Dagger Hilt](https://dagger.dev/hilt/)
 - [Retrofit](https://square.github.io/retrofit/)
+- [Room](https://developer.android.com/jetpack/androidx/releases/room)
 - [Alerter](https://github.com/Tapadoo/Alerter)
 - [Android SpinKit](https://github.com/ybq/Android-SpinKit)
 
