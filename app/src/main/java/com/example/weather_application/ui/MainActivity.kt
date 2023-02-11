@@ -20,12 +20,14 @@ class MainActivity : BaseActivityViewModel<ActivityMainBinding, MainViewModel>(M
         ActivityMainBinding.inflate(layoutInflater)
 
     override fun setUpObservers() {
-        viewModel.error.observe(this, {
-            if (it.internal)
+        viewModel.error.observe(this) {
+            if (it.internal) {
                 createAlerter(getString(it.messageId))
-            else
+            }
+            else {
                 createAlerter(it.message)
-        })
+            }
+        }
 
     }
 
@@ -34,8 +36,6 @@ class MainActivity : BaseActivityViewModel<ActivityMainBinding, MainViewModel>(M
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-
-
             if (destination.id != R.id.homeFragment) {
                 binding.imageButtonSettings.visibility = View.GONE
                 binding.imageButtonFavorites.visibility = View.GONE
@@ -43,8 +43,6 @@ class MainActivity : BaseActivityViewModel<ActivityMainBinding, MainViewModel>(M
                 binding.imageButtonSettings.visibility = View.VISIBLE
                 binding.imageButtonFavorites.visibility = View.VISIBLE
             }
-
-
         }
 
 

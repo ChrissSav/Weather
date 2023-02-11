@@ -20,10 +20,9 @@ class FavoritesFragment : BaseFragment<FragmentFavoritesBinding>() {
 
     private val viewModel: MainViewModel by activityViewModels()
     private val cities = mutableListOf<Pair<City, Boolean>>()
+    private var isInEditMode = false
 
-
-    override fun getViewBinding(): FragmentFavoritesBinding =
-        FragmentFavoritesBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentFavoritesBinding = FragmentFavoritesBinding.inflate(layoutInflater)
 
     override fun setUpObservers() {
 
@@ -71,18 +70,18 @@ class FavoritesFragment : BaseFragment<FragmentFavoritesBinding>() {
         }
 
         binding.search.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus)
+            if (hasFocus) {
                 (binding.recyclerView.adapter as FavoritesAdapter).submitList(cities.map { Pair(it.first, false) }.toMutableList())
-
+            }
         }
 
         binding.imageButtonEdit.setOnClickListener {
-            (binding.recyclerView.adapter as FavoritesAdapter).submitList(cities.map { Pair(it.first, true) }.toMutableList())
+            isInEditMode = !isInEditMode
+            (binding.recyclerView.adapter as FavoritesAdapter).submitList(cities.map { Pair(it.first, isInEditMode) }.toMutableList())
         }
 
         binding.recyclerView.setOnClickListener {
             binding.search.clearFocus()
-            print("fjrihguirhgiurghuyghuygrgrhg")
         }
 
     }

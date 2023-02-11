@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:elevation="0dp"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_margin="8dp"
         android:background="@drawable/weather_place_item_background_20dp"
         android:padding="16dp">
@@ -19,21 +20,21 @@
             android:id="@+id/temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22"
             android:textColor="@color/weather_item_text"
             android:textSize="40sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="22" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="top"
-            android:text="o"
             android:textColor="@color/weather_item_text"
             app:layout_constraintStart_toEndOf="@+id/temperature"
-            app:layout_constraintTop_toTopOf="@+id/temperature" />
+            app:layout_constraintTop_toTopOf="@+id/temperature"
+            android:text="o" />
 
         <ImageView
             android:id="@+id/icon"
@@ -48,28 +49,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="New York"
             android:textColor="@color/weather_item_text"
             android:textSize="@dimen/label"
             app:layout_constraintStart_toStartOf="@+id/temperature"
-            app:layout_constraintTop_toBottomOf="@+id/temperature" />
+            app:layout_constraintTop_toBottomOf="@+id/temperature"
+            tools:text="New York" />
 
         <TextView
             android:id="@+id/country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="USA"
             android:textColor="@color/weather_item_para"
             android:textSize="@dimen/label"
             app:layout_constraintStart_toStartOf="@+id/city"
-            app:layout_constraintTop_toBottomOf="@+id/city" />
+            app:layout_constraintTop_toBottomOf="@+id/city"
+            tools:text="USA" />
 
 
         <ImageView
             android:id="@+id/imageView_humidity"
             android:layout_width="@dimen/main_svg_dimen"
             android:layout_height="@dimen/main_svg_dimen"
+            android:layout_marginStart="-2dp"
             android:src="@drawable/ic_humidity"
             app:layout_constraintBottom_toBottomOf="@+id/humidity"
             app:layout_constraintStart_toStartOf="@+id/country"
@@ -81,34 +83,34 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/main_svg_margin_from_label"
             android:layout_marginTop="16dp"
-            android:text="17%"
             android:textColor="@color/weather_item_text"
             android:textSize="@dimen/label"
             app:layout_constraintStart_toEndOf="@+id/imageView_humidity"
-            app:layout_constraintTop_toBottomOf="@+id/country" />
+            app:layout_constraintTop_toBottomOf="@+id/country"
+            tools:text="17%" />
 
         <ImageView
             android:id="@+id/imageView_wind"
             android:layout_width="30dp"
             android:layout_height="@dimen/main_svg_dimen"
             android:layout_marginEnd="@dimen/main_svg_margin_from_label"
-            android:paddingEnd="4dp"
             android:src="@drawable/ic_wind"
             app:layout_constraintBottom_toBottomOf="@+id/wind"
             app:layout_constraintEnd_toStartOf="@+id/wind"
-            app:layout_constraintTop_toTopOf="@+id/wind" />
+            app:layout_constraintTop_toTopOf="@+id/wind"
+            tools:paddingEnd="4dp" />
 
 
         <TextView
             android:id="@+id/wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="7km/h"
             android:textColor="@color/weather_item_text"
             android:textSize="@dimen/label"
             app:layout_constraintBottom_toBottomOf="@+id/humidity"
             app:layout_constraintEnd_toEndOf="@+id/icon"
-            app:layout_constraintTop_toTopOf="@+id/humidity" />
+            app:layout_constraintTop_toTopOf="@+id/humidity"
+            tools:text="7km/h" />
 
         <ImageView
             android:id="@+id/delete"

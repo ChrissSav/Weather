@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-
     <fragment
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -18,11 +17,12 @@
 
     <ImageView
         android:id="@+id/imageButton_favorites"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/min_button_width_height"
+        android:layout_height="@dimen/min_button_width_height"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/ripple"
+        android:padding="8dp"
         android:src="@drawable/ic_favorite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,24 +31,18 @@
 
     <ImageView
         android:id="@+id/imageButton_settings"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="@dimen/min_button_width_height"
+        android:layout_height="@dimen/min_button_width_height"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/ripple"
         android:clickable="true"
         android:focusable="true"
+        android:padding="8dp"
         android:src="@drawable/ic_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/bottom_nav_def" />
 
-
-    <!--    <include-->
-    <!--        android:id="@+id/generic_loader"-->
-    <!--        layout="@layout/generic_loader"-->
-    <!--        android:visibility="gone"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
