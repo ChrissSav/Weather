@@ -6,4 +6,5 @@
     <string name="search">Поиск</string>
     <string name="ERROR_INTERNET_CONNECTION">Нет соединения с интернетом</string>
     <string name="ERROR_SOMETHING_WRONG">Ой! Произошла ошибка. *_*</string>
+    <string name="locations_not_found">Похоже, у вас нет любимого местоположения. Вы можете перейти в избранное и добавить местоположения.</string>
 </resources>

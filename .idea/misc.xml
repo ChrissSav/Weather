@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HOBBS/Desktop/Apps/Weather/app/src/main/res/drawable/ic_not_found.xml" value="0.269" />
         <entry key="..\:/Users/HOBBS/Desktop/Apps/Weather/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/HOBBS/Desktop/Apps/Weather/app/src/main/res/layout/city_place_item.xml" value="0.75" />
         <entry key="..\:/Users/HOBBS/Desktop/Apps/Weather/app/src/main/res/layout/fragment_favorites.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/HOBBS/Desktop/Apps/Weather/app/src/main/res/layout/fragment_home.xml" value="0.340625" />
+        <entry key="..\:/Users/HOBBS/Desktop/Apps/Weather/app/src/main/res/layout/item_list.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

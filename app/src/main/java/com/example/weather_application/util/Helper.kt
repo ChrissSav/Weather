@@ -30,3 +30,8 @@ fun getAppLanguage(): String {
 
     return lang;
 }
+
+fun <T> MutableCollection<T>.clearAndAddAll(collection: MutableCollection<T>) {
+    this.clear()
+    this.addAll(collection)
+}

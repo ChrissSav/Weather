@@ -6,4 +6,7 @@
     <string name="search">Αναζήτηση</string>
     <string name="ERROR_INTERNET_CONNECTION">Δεν υπάρχει σύνδεση στο διαδίκτυο</string>
     <string name="ERROR_SOMETHING_WRONG">Ωχ! Παρουσιάστηκε σφάλμα. *_*</string>
+
+    <string name="locations_not_found">Φαίνεται πώς δεν έχεις κάποια αγαπημένη τοποθεσία, μπορείς να πας στα αγαπημένα και να προσθέσεις τοποθεσίες</string>
+
 </resources>

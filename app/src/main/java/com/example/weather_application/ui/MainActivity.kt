@@ -53,9 +53,8 @@ class MainActivity : BaseActivityViewModel<ActivityMainBinding, MainViewModel>(M
         binding.imageButtonSettings.setOnClickListener {
             navController.navigateToDestination(R.id.settingsFragment)
         }
-        // viewModel.loadWeather("θεσσαλονικη", "larisa", "berlin")
-        viewModel.loadWeather()
 
+        viewModel.loadWeather()
     }
 
 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="now">Ahora</string>
-    <string name="today">Hoy dia</string>
-    <string name="warning">Advertencia</string>
-    <string name="search">Búsqueda</string>
-    <string name="ERROR_INTERNET_CONNECTION">Sin conexión a Internet</string>
-    <string name="ERROR_SOMETHING_WRONG">¡Ops! Se ha producido un error. *_*</string>
-</resources>

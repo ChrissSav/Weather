@@ -2,6 +2,7 @@ package com.example.weather_application.util
 
 import android.app.Activity
 import android.content.Intent
+import android.view.View
 import android.widget.TextView
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
@@ -11,7 +12,6 @@ import com.example.weather_application.R
 import com.tapadoo.alerter.Alerter
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.util.*
 
 
 fun TextView.setAnyText(text: Any) {
@@ -66,5 +66,22 @@ fun NavController.navigateToDestination(actionId: Int) {
         navBuilder.setPopEnterAnim(R.anim.fade_in)
         navBuilder.setPopExitAnim(R.anim.fade_out)
         this.navigate(actionId, null, navBuilder.build())
+    }
+}
+
+fun View.visibleOrGone(flag: Boolean) {
+    this.visibility = if (flag) {
+        View.VISIBLE
+    } else {
+        View.GONE
+    }
+}
+
+
+fun View.visibleOrInvisible(flag: Boolean) {
+    this.visibility = if (flag) {
+        View.VISIBLE
+    } else {
+        View.INVISIBLE
     }
 }

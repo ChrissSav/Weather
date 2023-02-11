@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:elevation="16dp"
+        android:visibility="gone"
         app:dotsColor="@color/bottom_nav_active"
         app:dotsCornerRadius="8dp"
         app:dotsSize="8dp"
-        android:visibility="gone"
         app:dotsSpacing="4dp"
         app:dotsStrokeColor="@color/bottom_nav_def"
         app:dotsStrokeWidth="2dp"
@@ -48,5 +48,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/not_found_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="315dp"
+            android:src="@drawable/ic_not_found" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/locations_not_found"
+            android:textAlignment="center"
+            android:textColor="@color/weather_item_text"
+            android:textSize="24sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
